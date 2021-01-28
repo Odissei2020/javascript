@@ -23,3 +23,21 @@
 
 'use strict';
 
+if (4 == 9) {
+    console.log('Ok!');
+} else {
+    console.log('Error');
+}
+
+
+if (num<49) {
+    console.log('Error');
+} else if (num > 100) {
+    console.log('Mного');
+} else {
+    console.log('Ok!');
+}
+
+const num = 50;
+
+(num === 50) ? console.log('Ok!') : console.log('Error');
