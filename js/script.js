@@ -41,16 +41,16 @@ if (num<49) {
 
 (num === 50) ? console.log('Ok!') : console.log('Error'); */
 
-const num = 50;
+const num = 'Hello';
 
 switch  (num) {
-    case 49:
+    case 'NO':
         console.log('Неверно');
         break;
-    case 100:
+    case 'You':
         console.log('Неверно');
         break;
-    case 50:
+    case 'Hello':
         console.log('В точку');
         break;
     default:
