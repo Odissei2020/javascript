@@ -14,8 +14,8 @@
 
 'use strict';
 
-function showFirstMessage() {
-    console.log('Hello World');
+function showFirstMessage(text) {
+    console.log(text);
 }
 
-showFirstMessage();
+showFirstMessage('Hello World');
