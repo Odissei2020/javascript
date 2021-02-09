@@ -1,41 +1,38 @@
 
 'use strict';
 
-// Объекты ассоциативные массивы
+// Массивы и псевдомассивы
 
-/* let counter = 0; */
+const arr = [2, 13, 26, 8, 10];
+arr.sort();
+console.log(arr);
 
-const options = {
-    name: `test`,
-    width: 1024,
-    height: 1024,
-    color: {
-        border: `black`,
-        bg: `red`
-    },
-    makeTest: function() {
-        console.log("Test");
-    }
-};
-
-options.makeTest();
-console.log(Object.keys(options).length);
-
-
-/* console.log(options.color.bg);
-console.log(options.color[`border`]);
-delete options.width;
-console.log(options); */
-
-/* for (let key in options) {
-    if (typeof(options[key]) === `object`) {
-        for (let i in options [key]) {
-            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-            counter++;
-        }
-    } else {
-        console.log(`Свойства ${key} имеет значение ${options[key]}`);
-        counter++;
-    }   
+function compareNum(a, b) {
+    return a - b; 
 }
-console.log(counter); */
+
+/* arr[99] = 0;
+console.log(arr.length);
+console.log(arr); */
+/* arr.forEach(function(item, i, arr) {
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+}); */
+
+
+/* arr.pop(); */
+/* arr.push(145); */
+
+/* console.log(arr); */
+
+/* for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+} */
+
+/* for (let value of arr) {
+    console.log(value);
+} */
+
+/* const str =prompt("", "");
+const products = str.split(", ");
+products.sort();
+console.log(products.join(';')); */
