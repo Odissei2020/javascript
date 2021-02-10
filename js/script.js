@@ -1,38 +1,69 @@
 
 'use strict';
 
-// Массивы и псевдомассивы
+// Передача по ссылке или по значению Spread
 
-const arr = [2, 13, 26, 8, 10];
-arr.sort();
-console.log(arr);
+let a = 5,
+    b = a;
 
-function compareNum(a, b) {
-    return a - b; 
+    b = b + a;
+console.log(b);
+console.log(a);
+
+/* const obj = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj; // передача данных по ссылке
+
+copy.a = 10;
+
+console.log(copy);
+console.log(obj); */
+
+function copy(mainObj) {
+    let objCopy = {};
+    let key;
+    
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
 }
 
-/* arr[99] = 0;
-console.log(arr.length);
-console.log(arr); */
-/* arr.forEach(function(item, i, arr) {
-    console.log(`${i}: ${item} внутри массива ${arr}`);
-}); */
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
 
+const newNumbers = copy(numbers);
 
-/* arr.pop(); */
-/* arr.push(145); */
+newNumbers.a = 10;
 
-/* console.log(arr); */
+/* console.log(newNumbers);
+console.log(numbers); */
 
-/* for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-} */
+const add = {
+    d: 17,
+    e: 20
+};
 
-/* for (let value of arr) {
-    console.log(value);
-} */
+console.log(Object.assign(numbers,add));
+const clone = Object.assign({}, add);
 
-/* const str =prompt("", "");
-const products = str.split(", ");
-products.sort();
-console.log(products.join(';')); */
+clone.d = 20;
+
+/* console.log(add);
+console.log(clone); */
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'adadadsdsds';
+console.log(newArray);
+console.log(oldArray);
