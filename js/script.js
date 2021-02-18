@@ -1,39 +1,46 @@
 'use strict';
 
-// 1)
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
-// 2)
-console.log(typeof(null + ''));
+/*  let x = 5; 
+alert( x++ );  Ответ 5 , но после х стоят два ++ , потом увеличиться а еденицу*/
 
-const num = 5;
+/* console.log([ ] + false - null + true );  ответ NaN (не числовое значение) */
 
-console.log("https://vk.com/catalog/" + num);
+/* let y = 1; 
+   let x = y = 2;
+   alert(x);  Ответ 2*/
 
-const fontSize = 26 + 'px';
+ /* console.log([ ] + 1 + 2); ответ 12, так как данные получаемые
+  от пользователся всегда строковые */
 
-// To Number
+  /* alert( "1"[0] ); ответ 1, так как в массиве есть строковые данные 1 и 0,
+   отчет в массиве идет от нуля, еденица в нулевой строке,
+   а ноль будет в первой строке, ответ 1 */
 
-// 1)
-console.log(typeof(Number('4')));
-// 2)
-console.log(typeof(Number(+'5')));
-// 3)
-console.log(typeof(parseInt("15px", 10)));
+  /* console.log(2 && 1 && null && 0 && undefined ); ответ NULL  
+  И (&) запинается на лжи
+  ИЛИ запинается на правде*/
+ /*  При сомнении надо смотреть таблицу приоритета операторов JavaScript
+ */
 
-let answ = +prompt("Hello", "");
+/*   console.log(!!( 1 && 2 ) === (1 && 2)); */
 
-// To boolean
+/* alert( null || 2 && 3 || 4 );  ответ три, по приоритету программа проверяет  2 и 3 при проверке
+берется второй оператор 3, потом проверяется Null и 2 и 3 , снова  берется по последнему оператору,
+или  оператор не выполняется когда два оператора истина, поэтому посленему оператору
+будет результат 3, и 4 уже проверрятся не будет. */
 
-// 0, '', null, undefined, NaN; все значание Folse
+/* •	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
+Допустим э два массива в массиве а 50кг разных яблок и в массиве Б тоже 50кг разных яблок
+массивы не равны так как яблоки разные */
 
-let switcher = null;
+/* const a = [1, 2, 3]; 
+const b = [1, 2, 3]; 
+console.log(a == b); */
 
-if (switcher) {
-    console.log('Working...');
-}
+/* •	Что выведет этот код: alert( +"Infinity" ); ? */
+/* alert( +"Infinity" ); */
 
-switcher = 1;
-if (switcher) {
-    console.log('Working...');
-}
+/* •	Что выведет этот код: alert( +"Infinity" ); ?
+alert( +"Infinity" ); */
+
+alert("Ёжик" > "яблоко");
