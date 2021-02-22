@@ -1,46 +1,21 @@
 'use strict';
 
-/*  let x = 5; 
-alert( x++ );  Ответ 5 , но после х стоят два ++ , потом увеличиться а еденицу*/
+const box = document.getElementById('box');
+console.log(box);
 
-/* console.log([ ] + false - null + true );  ответ NaN (не числовое значение) */
+/* const btns = document.getElementsByTagName('button')[1]; */
+const btns = document.getElementsByTagName('button');
+console.log(btns[1]);
 
-/* let y = 1; 
-   let x = y = 2;
-   alert(x);  Ответ 2*/
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
 
- /* console.log([ ] + 1 + 2); ответ 12, так как данные получаемые
-  от пользователся всегда строковые */
+const hearts = document.querySelectorAll('.heart');
 
-  /* alert( "1"[0] ); ответ 1, так как в массиве есть строковые данные 1 и 0,
-   отчет в массиве идет от нуля, еденица в нулевой строке,
-   а ноль будет в первой строке, ответ 1 */
+hearts.forEach(item => {
+      console.log(item);
+});
 
-  /* console.log(2 && 1 && null && 0 && undefined ); ответ NULL  
-  И (&) запинается на лжи
-  ИЛИ запинается на правде*/
- /*  При сомнении надо смотреть таблицу приоритета операторов JavaScript
- */
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
 
-/*   console.log(!!( 1 && 2 ) === (1 && 2)); */
-
-/* alert( null || 2 && 3 || 4 );  ответ три, по приоритету программа проверяет  2 и 3 при проверке
-берется второй оператор 3, потом проверяется Null и 2 и 3 , снова  берется по последнему оператору,
-или  оператор не выполняется когда два оператора истина, поэтому посленему оператору
-будет результат 3, и 4 уже проверрятся не будет. */
-
-/* •	a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b ?
-Допустим э два массива в массиве а 50кг разных яблок и в массиве Б тоже 50кг разных яблок
-массивы не равны так как яблоки разные */
-
-/* const a = [1, 2, 3]; 
-const b = [1, 2, 3]; 
-console.log(a == b); */
-
-/* •	Что выведет этот код: alert( +"Infinity" ); ? */
-/* alert( +"Infinity" ); */
-
-/* •	Что выведет этот код: alert( +"Infinity" ); ?
-alert( +"Infinity" ); */
-
-alert("Ёжик" > "яблоко");
