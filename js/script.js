@@ -4,8 +4,8 @@ const box = document.getElementById('box');
 console.log(box);
 
 /* const btns = document.getElementsByTagName('button')[1]; */
-const btns = document.getElementsByTagName('button');
-console.log(btns[1]);
+ const btns = document.getElementsByTagName('button');
+console.log(btns);
 
 const circles = document.getElementsByClassName('circle');
 console.log(circles);
