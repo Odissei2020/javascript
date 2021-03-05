@@ -1,50 +1,54 @@
+/* Задания на урок:
+
+1) Удалить все рекламные блоки со страницы (правая часть сайта)
+
+2) Изменить жанр фильма, поменять "комедия" на "драма"
+
+3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
+Реализовать только при помощи JS
+
+4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+Отсортировать их по алфавиту 
+
+5) Добавить нумерацию выведенных фильмов */
+
 'use strict';
 
-const box = document.getElementById('box'),
-      btns = document.getElementsByTagName('button'),
-      circles = document.getElementsByClassName('circle'),
-      hearts = document.querySelectorAll('.heart'),
-      oneHeart = document.querySelector('.heart'),
-      wrapper = document.querySelector('.wrapper');
+const movieDB = {
+    movies: [
+        "Логан",
+        "Лига справедливости",
+        "Ла-ла лэнд",
+        "Одержимость",
+        "Скотт Пилигрим против..."
+    ]
+};
 
-/* box.style.backgroundColor = 'blue';
-box.style.width = '500px'; */
+const adv = document.querySelectorAll('.promo__adv img'),
+      poster = document.querySelector('.promo__bg'),
+      genre = poster.querySelector('.promo__genre'),
+      movieList = document.querySelector('.promo__interactive-list');
 
-box.style.cssText = `background-color: blue; width: 500px`;
+/* adv.forEach(item => {
+    item.remove();
+}); */
 
-btns[1].style.borderRadius = '100%';
-circles[0].style.backgroundColor = 'red';
-
-/* for (let i = 0; i < hearts.length; i++) {
-    hearts[i].style.backgroundColor = 'blue';
-} */
-
-hearts.forEach(item => {
-    item.style.backgroundColor = 'blue';
+adv.forEach(function (item){
+    item.remove();
 });
 
-const div = document.createElement('div');
+genre.textContent = 'драма';
 
-div.classList.add('black');
-/* document.querySelector('.wrapper').append(div); 
-если переменная используется один раз в коде*/
- wrapper.append(div);
-/* wrapper.appendChild(div); тоже самое что и append но старое */
+poster.style.backgroundImage = 'url("img/bg.jpg")';
 
-/* wrapper.prepend(div); метот вставки объекта вначале блока Н:wrapper*/
+movieList.innerHTML = "";
 
-/* hearts[0].before(div); метод before публикует объект вначале блока Н:hearts*/
-/* wrapper.insertBefore(div, hearts[1]); старый метод аналог before */
+movieDB.movies.sort();
 
-/* hearts[0].after(div); метод after публикует объект после блока Н:hearts*/
-
-/* circles[0].remove();  метод удаляет элемент*/
-/* wrapper.removeChild(hearts[1]);  старый метод remove*/
-
-/* hearts[0].replaceWith(circles[0]); Заменяет элементы Н: hearts на circles */
-/* wrapper.replaceChild(circles[0], hearts[0]);  Старое, тоже самое что и replaceWith*/
-
-/* div.innerHTML = '<h1>Hello World</h1>'; метод Вставляет текст и hTML код в блок*/
-/* div.textContent = "Hello"; метод Вставляет текст в болк*/
-div.innerHTML = '<h1>Hello World</h1>';
-div.insertAdjacentHTML('afterend', '<h2>Привет</h2>');
+movieDB.movies.forEach((film, i) => {
+    movieList.innerHTML += `
+        <li class="promo__interactive-item">${i + 1} ${film}
+            <div class="delete"></div>
+        </li>
+    `;
+});
